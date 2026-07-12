@@ -1,0 +1,32 @@
+.clock-container{
+
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+
+gap:8px;
+
+}
+
+.clock-label{
+
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#777;
+
+}
+
+.clock-time{
+
+font-size:28px;
+font-weight:600;
+letter-spacing:3px;
+color:#F4D27A;
+
+text-shadow:
+0 0 10px rgba(244,210,122,.35);
+
+font-family:"JetBrains Mono",monospace;
+
+}

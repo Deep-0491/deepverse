@@ -1,0 +1,261 @@
+/* ===================================================
+   DEEPVERSE INTRO SCREEN
+=================================================== */
+
+.intro-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #030303;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===========================================
+   Background Layers
+=========================================== */
+
+.intro-screen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+      radial-gradient(circle at center,
+      rgba(255, 196, 80, 0.08),
+      transparent 65%);
+
+  pointer-events: none;
+}
+
+.intro-screen::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+      linear-gradient(
+          rgba(255,255,255,.02) 1px,
+          transparent 1px
+      );
+
+  background-size:100% 4px;
+
+  opacity:.15;
+
+  pointer-events:none;
+}
+
+/* ===========================================
+   Grain
+=========================================== */
+
+.intro-noise{
+
+position:absolute;
+
+inset:0;
+
+opacity:.08;
+
+background-image:
+
+radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+background-size:4px 4px;
+
+animation:noiseMove 6s linear infinite;
+
+}
+
+@keyframes noiseMove{
+
+0%{
+
+transform:translate(0);
+
+}
+
+50%{
+
+transform:translate(-30px,20px);
+
+}
+
+100%{
+
+transform:translate(20px,-20px);
+
+}
+
+}
+
+/* ===========================================
+   Content
+=========================================== */
+
+.intro-container{
+
+width:min(900px,90%);
+
+position:relative;
+
+z-index:5;
+
+}
+
+.intro-header{
+
+margin-bottom:60px;
+
+}
+
+.intro-small{
+
+font-size:13px;
+
+letter-spacing:6px;
+
+color:#777;
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+
+}
+
+.intro-header h1{
+
+font-size:58px;
+
+font-weight:700;
+
+letter-spacing:4px;
+
+color:#F4D27A;
+
+line-height:1.1;
+
+}
+
+/* ===========================================
+   Terminal
+=========================================== */
+
+.intro-terminal{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+font-size:18px;
+
+}
+
+.terminal-line{
+
+display:flex;
+
+align-items:center;
+
+color:#d8d8d8;
+
+opacity:0;
+
+transform:translateY(15px);
+
+animation:fadeUp .5s forwards;
+
+}
+
+.arrow{
+
+color:#F4D27A;
+
+margin-right:15px;
+
+}
+
+.message{
+
+letter-spacing:1px;
+
+}
+
+.cursor{
+
+margin-left:8px;
+
+color:#F4D27A;
+
+}
+
+/* ===========================================
+   Footer
+=========================================== */
+
+.intro-footer{
+
+margin-top:70px;
+
+color:#7b7b7b;
+
+letter-spacing:3px;
+
+font-size:13px;
+
+text-transform:uppercase;
+
+}
+
+/* ===========================================
+   Animations
+=========================================== */
+
+@keyframes fadeUp{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================================
+   Responsive
+=========================================== */
+
+@media(max-width:768px){
+
+.intro-header h1{
+
+font-size:38px;
+
+}
+
+.intro-terminal{
+
+font-size:15px;
+
+}
+
+.intro-small{
+
+letter-spacing:3px;
+
+}
+
+}
